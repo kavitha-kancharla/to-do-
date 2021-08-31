@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#form{
+position:absolute;
+left:590px;
+}
+#listitem{
+border:0;
+outline:none;
+border-bottom:2px solid #000;
+transition:0.15s;
+}
+h1{
+text-align:center;
+}
+#addtodo{
+position:absolute;
+left:790px;
+border:0;
+  background:rgb(255,68,68);
+color:#fff;
+padding:8px 16px;
+cusor:pointer; }
+#todo{list-style-type:none;
+margin-top:20px;
+}
+li{
+position:relative;
+padding:8px;
+font-size:16px;
+transition:0.1s;
+}
+li:nth-child(odd){
+background:rgb(255,226,226);
+}
+li:hover{
+background:rgb(255,168,168);
+}
+
+</style></head>
+<body>
+
+<h1>To Do List</h1>
+<div id="form">
+<input type="text" autocomplete="off" placeholder="List item" id="listitem" >
+<div id="todo"></div>
+</div>
+<button onclick="myFunction()"id="addtodo">add</button>
+
+<script>
+
+function myFunction() {
+
+  var para = document.createElement("P");
+   para.innerText =listitem.value;
+  todo.appendChild(para);
+listitem.value="";
+para.addEventListener('click',function(){
+para.style.textDecoration="line-through";
+})
+para.addEventListener('dblclick',function(){
+todo.removeChild(para);
+})
+}
+</script>
+
+</body>
+</html>
